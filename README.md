@@ -20,7 +20,6 @@ Hyperparameter tuning using RandomizedSearchCV.
 Model Evaluation:
 
 Metrics: Macro-F1 score, precision, recall.
-SHAP analysis to identify important features.
 Comparison of models to select the best performer.
 Deployment-Ready Solution:
 
@@ -43,15 +42,6 @@ The Microsoft GUIDE dataset provides comprehensive telemetry data across three h
 
 GUIDE_train.csv (2.43 GB) GUIDE_test.csv (1.09 GB) Kaggle Link to Dataset
 
-Sample row:
-
-Id	OrgId	IncidentId	AlertId	Timestamp	DetectorId	AlertTitle	Category	MitreTechniques	IncidentGrade	ActionGrouped	ActionGranular	EntityType	EvidenceRole	DeviceId	Sha256	IpAddress	Url	AccountSid	AccountUpn	AccountObjectId	AccountName	DeviceName	NetworkMessageId	EmailClusterId	RegistryKey	RegistryValueName	RegistryValueData	ApplicationId	ApplicationName	OAuthApplicationId	ThreatFamily	FileName	FolderPath	ResourceIdName	ResourceType	Roles	OSFamily	OSVersion	AntispamDirection	SuspicionLevel	LastVerdict	CountryCode	State	City
-0	180388628218	0	612	2024-06-04T06:05:15.000Z	7	InitialAccess	NaN	TruePositive	NaN	NaN	Ip	Related	98799	138268	27	160396	441377	673934	425863	453297	153085	529644	NaN	1631	635	860	2251	3421	881	NaN	289573	117668	3586	NaN	NaN	5	66	NaN	NaN	31	6	3		
-Volume: Contains over 13 million pieces of evidence.
-Annotations: Includes more than 1 million incidents with triage labels and 26,000 incidents labeled with remediation actions.
-Telemetry: Drawn from 6,100+ organizations, covering 441 techniques from the MITRE ATT&CK framework.
-Partitioning: Split into 70% training data and 30% testing data, maintaining stratified representation across triage grades and identifiers.
-The dataset has been processed into training and testing sets (traindata_processed.csv and testdata_processed.csv), which form the backbone of this analysis.
 
 Project Workflow
 1. Data Preprocessing
@@ -89,7 +79,6 @@ Identified top features with SHAP, including OrgId, IncidentId, DetectorId, and 
 
 Used these features to improve computational efficiency and model accuracy.
 
-SHAP Analysis
 
 6. Final Evaluation
 Tested the final model on unseen data, achieving high Macro-F1 Score.
@@ -98,35 +87,7 @@ Delivered a balanced and generalizable model for real-world applications.
 
 Final Evaluation
 
-Results
-Best Model: XXGBoost with hyperparameter tuning and without SMOTE.
-Macro-F1 Score:
-Validation Set: 0.91
-Test Set: 0.90
-Feature Importance:
-Top features like OrgId, IncidentId,alertTitle and DetectorId significantly influenced predictions.
-Model Performance:
-Balanced precision and recall for all three classes (TP, BP, FP).
-Top Features: Insights from SHAP analysis enabled computational efficiency and improved results.
-Technologies Used
-Programming Languages
-Python
-Libraries
-Data Processing: pandas, numpy
-Visualization: matplotlib, seaborn
-Machine Learning:
-scikit-learn (Logistic Regression, Decision Trees, Random Forest)
-XGBoost
-LightGBM
-imbalanced-learn (SMOTE)
-Feature Analysis: SHAP
-Dataset
-Microsoft GUIDE Dataset (processed into traindata_processed.csv and testdata_processed.csv)
-Additional Tools
-Model Saving: joblib
-How to Run
-Clone the repository:
-git clone <repository_url>
+
 cd <repository_directory>
 Acknowledgments
 Microsoft for providing the GUIDE dataset.
