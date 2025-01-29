@@ -24,6 +24,7 @@ Comparison of models to select the best performer.
 Deployment-Ready Solution:
 
 Final model saved using joblib for easy deployment.
+
 Business Use Cases
 1. Security Operation Centers (SOCs)
 Automate the triage process to prioritize critical threats efficiently.
@@ -45,10 +46,9 @@ GUIDE_train.csv (2.43 GB) GUIDE_test.csv (1.09 GB) Kaggle Link to Dataset
 
 Project Workflow
 1. Data Preprocessing
-Removed columns with >50% missing values.
+Removed and handled missing and duplicate values, ensuring clean data.
 Engineered features like Hour, Day, and Time from timestamps.
 Encoded categorical features using LabelEncoder.
-Handled missing and duplicate values, ensuring clean data.
 2. Exploratory Data Analysis (EDA)
 Visualized incident distributions across Hour, Day,month and Category. EDA Visualizations EDA Visualizations EDA Visualizations EDA Visualizations
 
@@ -77,11 +77,11 @@ Hyperparameter Tuning
 5. Feature Importance
 Identified top features with SHAP, including OrgId, IncidentId, DetectorId, and more.
 
-Used these features to improve computational efficiency and model accuracy.
+These features are used to improve computational efficiency and model accuracy.
 
 
 6. Final Evaluation
-Tested the final model on unseen data, achieving high Macro-F1 Score.
+Tested the final model on unseen data, achieving a high Macro-F1 Score.
 
 Delivered a balanced and generalizable model for real-world applications.
 
